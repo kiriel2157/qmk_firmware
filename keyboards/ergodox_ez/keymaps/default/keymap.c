@@ -6,6 +6,13 @@
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
 
+#define JA_CLON KC_QUOT  // : and +
+#define JA_AT   KC_LBRC  // @ and `
+#define JA_HAT  KC_EQL   // ^ and ~
+#define JA_ENUN KC_RO    // \ and _ (EN mark and UNder score)
+#define JA_ENVL KC_JYEN  // \ and | (EN mark and Vertical Line)
+#define JA_LBRC KC_RBRC  // [ and {
+#define JA_RBRC KC_BSLS  // ] and }
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
@@ -15,11 +22,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Grv    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L1  |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | TAB    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
+ * | TAB    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   :    |::
  * |--------+------+------+------+------+------| Hyper|           | Meh  |------+------+------+------+------+--------|
- * | LShift |Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |//MDA | RShift |
+ * | LShift |Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |//MDA |   @    |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   |CTLR  |  GUI |ALT   | ALFT | CLSFT|                                       |   [  |   ]  | ALT  | ~L1  | Ctrl   |
+ *   |CTLR  |  GUI |ALT   | ALFT | CLSFT|                                       |   [  |   ]  |      |GU/SB |   Å_   |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,---------------.
  *                                        | Home | END  |       | PgUp |PgDn    |
@@ -37,17 +44,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_ESC,			KC_1,			KC_2,			KC_3,			KC_4,			KC_5,			KC_LEFT,
         KC_GRV,			KC_Q,			KC_W,			KC_E,			KC_R,			KC_T,			TG(SYMB),
         KC_TAB,			KC_A,			KC_S,			KC_D,			KC_F,			KC_G,
-        KC_LSFT,		CTL_T(KC_Z),	KC_X,			KC_C,			KC_V,			KC_B,			ALL_T(KC_NO),
+        KC_LSFT,		KC_Z,			KC_X,			KC_C,			KC_V,			KC_B,			ALL_T(KC_NO),
         KC_LCTRL,		KC_LGUI,		KC_LALT,		LALT(KC_LSFT),	LSFT(KC_LCTRL),
                                               											KC_HOME,		KC_END,
                                                               											KC_LEFT,
                                                							KC_BSPC,		KC_SPC,			KC_RGHT,
         // right hand
-             KC_6,			KC_7,			KC_8,			KC_9,		KC_0,			KC_MINS,		KC_EQL,
-             TG(SYMB),		KC_Y,			KC_U,			KC_I,		KC_O,			KC_P,			KC_JYEN,
-             				KC_H,			KC_J,			KC_K,		KC_L,			KC_SCLN,		KC_QUOT,
-             MEH_T(KC_NO),	KC_N,			KC_M,			KC_COMM,	KC_DOT,			LT(MDIA, KC_SLSH),KC_RSFT,
-             								KC_LBRC,		KC_RBRC,	KC_RALT,		KC_FN1,			KC_RCTRL,
+             KC_6,			KC_7,			KC_8,			KC_9,		KC_0,			KC_MINS,		JA_HAT,
+             TG(SYMB),		KC_Y,			KC_U,			KC_I,		KC_O,			KC_P,			JA_ENVL,
+             				KC_H,			KC_J,			KC_K,		KC_L,			KC_SCLN,		JA_CLON,
+             MEH_T(KC_NO),	KC_N,			KC_M,			KC_COMM,	KC_DOT,			LT(MDIA, KC_SLSH),JA_AT,
+             								JA_LBRC,		JA_RBRC,	KC_RALT,		LT(MDIA, SYMB),	JA_ENUN,
              KC_PGUP,		KC_PGDN,
              KC_UP,
              KC_DOWN,		KC_ENT,			KC_TAB
@@ -110,9 +117,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        ,-------------.       ,-------------.
  *                                        |      |      |       |      |      |
  *                                 ,------|------|------|       |------+------+------.
- *                                 |      |      |      |       |      |      |Brwser|
- *                                 |      |      |------|       |------|      |Back  |
- *                                 |      |      |      |       |      |      |      |
+ *                                 |      |      |      |       |      | Lclk |Rclk  |
+ *                                 |      |      |------|       |------|      |      |
+ *                                 |      |      |      |       | BB   |      |      |
  *                                 `--------------------'       `--------------------'
  */
 // MEDIA AND MOUSE
@@ -133,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                           KC_VOLU, KC_VOLD, KC_MUTE, KC_TRNS, KC_TRNS,
        KC_TRNS, KC_TRNS,
        KC_TRNS,
-       KC_TRNS, KC_TRNS, KC_WBAK
+       KC_WBAK, KC_BTN1, KC_BTN2
 ),
 };
 
