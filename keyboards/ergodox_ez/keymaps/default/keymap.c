@@ -6,13 +6,6 @@
 #define SYMB 1 // symbols
 #define MDIA 2 // media keys
 
-#define JA_CLON KC_QUOT  // : and +
-#define JA_AT   KC_LBRC  // @ and `
-#define JA_HAT  KC_EQL   // ^ and ~
-#define JA_ENUN KC_RO    // \ and _ (EN mark and UNder score)
-#define JA_ENVL KC_JYEN  // \ and | (EN mark and Vertical Line)
-#define JA_LBRC KC_RBRC  // [ and {
-#define JA_RBRC KC_BSLS  // ] and }><}=****
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Keymap 0: Basic layer
@@ -45,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,			KC_Q,			KC_W,			KC_E,			KC_R,			KC_T,			TG(SYMB),
         KC_TAB,			KC_A,			KC_S,			KC_D,			KC_F,			KC_G,
         KC_LSFT,		CTL_T(KC_Z),	KC_X,			KC_C,			KC_V,			KC_B,			ALL_T(KC_NO),
-        CTL_T,			KC_QUOT,		LALT(KC_LSFT),	KC_LEFT,		KC_RGHT,
+        KC_LCTRL,		KC_QUOT,		LALT(KC_LSFT),	KC_LEFT,		KC_RGHT,
                                               										ALT_T(KC_APP),		KC_LGUI,
                                                               											KC_HOME,
                                                							KC_SPC,		KC_BSPC,			KC_END,
