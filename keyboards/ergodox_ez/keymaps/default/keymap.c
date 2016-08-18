@@ -23,7 +23,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * | Grv    |   Q  |   W  |   E  |   R  |   T  |  L1  |           |  L1  |   Y  |   U  |   I  |   O  |   P  |   \    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
  * | TAB    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   :    |::
- * |--------+------+------+------+------+------| Hyper|           | Meh  |------+------+------+------+------+--------|
+ * |--------+------+------+------+------+------| Hyper|           | ALSP |------+------+------+------+------+--------|
  * | LShift |Z/Ctrl|   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |//MDA |   @    |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
  *   |CTLR  |  GUI |ALT   | ALFT | CLSFT|                                       |   [  |   ]  |  ALT |GU/SB |   Å_   |
@@ -32,7 +32,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                                        | Home | END  |       | PgUp |PgDn    |
  *                                 ,------|------|------|       |------+--------+------.
  *                                 |      |      | Left |       | Up   |        |      |
- *                                 | BS   |Space |------|       |------|   Enter|Tab   |
+ *                                 | BS   |Space |------|       |------|   Enter|DEL   |
  *                                 |      |      | Right|       | Dn   |        |      |
  *                                 `--------------------'       `----------------------'
  */
@@ -53,11 +53,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              KC_6,			KC_7,			KC_8,			KC_9,		KC_0,			KC_MINS,		JA_HAT,
              TG(SYMB),		KC_Y,			KC_U,			KC_I,		KC_O,			KC_P,			JA_ENVL,
              				KC_H,			KC_J,			KC_K,		KC_L,			KC_SCLN,		JA_CLON,
-             MEH_T(KC_NO),	KC_N,			KC_M,			KC_COMM,	KC_DOT,			LT(MDIA, KC_SLSH),JA_AT,
+             LALT(KC_SPC),	KC_N,			KC_M,			KC_COMM,	KC_DOT,			LT(MDIA, KC_SLSH),JA_AT,
              								JA_LBRC,		JA_RBRC,	KC_RALT,		LT(SYMB, KC_NO),	JA_ENUN,
              KC_PGUP,		KC_PGDN,
              KC_UP,
-             KC_DOWN,		KC_ENT,			KC_TAB
+             KC_DOWN,		KC_ENT,			KC_DEL
     ),
 /* Keymap 1: Symbol Layer
  *
